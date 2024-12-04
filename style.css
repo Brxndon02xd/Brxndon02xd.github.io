@@ -1,0 +1,564 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap");
+
+*{
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   text-decoration: none;
+   list-style: none; 
+}
+
+body {
+    background-color: rgb(44, 26, 204);
+    font-family: "Poppins", sans-serif;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.swiper-button-prev::after {
+    font-size: 25px;
+}
+
+.swiper-button-next::after {
+    font-size: 25px;
+}
+
+.swiper-button-next {
+    color: rgb(19, 18, 18);
+}
+
+.swiper-button-prev {
+    color: rgb(19, 18, 18);
+}
+
+.swiper-pagination-bullet {
+    background-color: #D3D2D2;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: rgb(19, 18, 18);
+}
+
+.menu {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between; /* Cambiado de 'center' a 'space-between' para mejor distribución */
+    align-items: center; /* Añadido para centrar verticalmente los elementos */
+    padding: 0 15px; /* Añadido padding para evitar que el contenido toque los bordes */
+    z-index: 1000;
+    font-weight: bold;
+}
+
+.navbar {
+    display: flex;
+    align-items: center; /* Aseguramos que los elementos estén alineados verticalmente */
+}
+
+.menu-1, .menu-2 {
+    display: flex;
+    align-items: center;
+}
+
+.menu-1 {
+    margin-right: 180px;
+}
+
+.menu-2 {
+    margin-left: 180px;
+}
+
+.logo-1 {
+    display: none; /* Cambio de 'width: 0;' a 'display: none;' para ocultar el logo */
+}
+
+.logo-2 {
+    width: 150px;
+}
+
+.socials {
+    display: flex;
+    gap: 10px; /* Utilizamos gap para un espaciado consistente entre los iconos */
+}
+
+.social {
+    height: 40px;
+    width: 40px;
+    border: 1px solid #FFFFFF;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centrado del icono dentro del contenedor */
+    transition: background-color 0.3s ease; /* Transición más suave al hacer hover */
+}
+
+.social:hover {
+    background-color: rgb(19, 18, 18);
+}
+
+.social img {
+    max-width: 70%; /* Ajustado el tamaño de las imágenes dentro de los iconos */
+    max-height: 70%;
+}
+
+.menu .navbar ul {
+    list-style: none; /* Eliminación de viñetas de lista */
+    padding: 0;
+    margin: 0;
+    display: flex;
+}
+
+.menu .navbar ul li {
+    position: relative;
+}
+
+.menu .navbar ul li a {
+    font-size: 18px;
+    padding: 20px;
+    color: #FFFFFF;
+    text-decoration: none; /* Añadido para quitar el subrayado en los enlaces */
+    transition: color 0.3s ease; /* Transición suave para el hover */
+}
+
+.menu .navbar ul li a:hover {
+    color: rgb(19, 18, 18);
+}
+
+#menu {
+    display: none;
+}
+
+.menu-icono {
+    width: 25px;
+}
+
+.menu label {
+    cursor: pointer;
+    display: none; /* Mantener oculto el icono del menú por defecto */
+}
+
+.header-content {
+    margin-top: 200px;
+    padding-bottom: 50px;
+}
+
+.slider {
+    display: flex;
+    align-items: center;
+}
+
+.slider-txt {
+    margin-left: 85px;
+    width: 50%;
+}
+
+.slider-txt h1 {
+    font-size: 70px;
+    color: #FFFFFF;
+    text-transform: uppercase;
+    font-weight: 800;
+}
+
+.slider-txt p {
+    font-size: 18px;
+    color: #A7A7A7;
+}
+
+.slider-img {
+    width: 50%;
+}
+
+.slider-img img {
+    margin-right: 20px; /* Reduce el margen para mejorar el diseño */
+    width: 100%; /* Asegura que la imagen se ajuste al contenedor */
+    max-width: 550px; /* Limita el tamaño máximo a 550px */
+    height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.products {
+    background-color: #0d0d0d;
+}
+
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 100px 0;
+}
+
+.tabs label {
+    width: 15%;
+    order: 1;
+    display: block;
+    padding: 20px 0;
+    text-align: center;
+    cursor: pointer;
+    color: #A7A7A7;
+    font-weight: 700;
+    transition: background-color 0.2s ease, color 0.2s ease; /* Transición suave */
+}
+
+.tabs input[type="radio"] {
+    display: none;
+}
+
+.tabs input[type="radio"]:checked + label {
+    border-bottom: 2px solid #DB241B;
+    color: #FFFFFF;
+}
+
+.tabs input[type="radio"]:checked + label + .tab {
+    display: block;
+}
+
+.tabs .tab {
+    order: 99;
+    flex-grow: 1;
+    width: 100%;
+    display: none;
+    padding-top: 25px;
+}
+/* General container */
+.valores-container {
+    background-color: #f5f5f5;
+    padding: 40px 15px;
+    text-align: center;
+  }
+  
+  .valores-title {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+  
+  .valores {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    margin-top: 20px;
+  }
+  
+  .valor {
+    background-color: #fff;
+    padding: 20px 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .valor:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .valor-icon {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+  }
+  
+  .valor-text {
+    font-family: 'Arial', sans-serif;
+    font-size: 14px;
+    color: #333;
+    font-weight: 500;
+    text-transform: capitalize;
+  }
+  
+  .valor:hover .valor-icon {
+    transform: scale(1.1);
+  }
+  
+  /* Responsive adjustments */
+  @media screen and (max-width: 1024px) {
+    .valores-container {
+      padding: 30px 15px;
+    }
+  
+    .valores-title {
+      font-size: 22px;
+    }
+  
+    .valor {
+      padding: 15px 12px;
+    }
+  
+    .valor-text {
+      font-size: 13px;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .valores-title {
+      font-size: 20px;
+    }
+  
+    .valor {
+      padding: 15px;
+    }
+  
+    .valor-text {
+      font-size: 12px;
+    }
+  
+    .valor-icon {
+      width: 50px;
+      height: 50px;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    .valores-title {
+      font-size: 18px;
+    }
+  
+    .valor {
+      padding: 10px;
+    }
+  
+    .valor-text {
+      font-size: 11px;
+    }
+  
+    .valor-icon {
+      width: 45px;
+      height: 45px;
+    }
+  }
+  
+.horario {
+    padding: 100px 0px;
+    background-color: #0d0d0d;
+}
+
+.horario-info h2 {
+    font-size: 75px;
+    color: #FFFFFF;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 50px;
+}
+
+.horario-txt {
+    display: flex;
+    justify-content: space-between;
+}
+
+.txt {
+    color: #FFFFFF;
+}
+
+.txt h4 {
+    font-size: 18px;
+    color: #A7A7A7;
+    margin-bottom: 30px;
+}
+
+.txt p {
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.map {
+    filter: grayscale(100%) invert(92%) contrast(93%);
+}
+
+.footer {
+    padding: 100px 0px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #181818;
+}
+
+.links h4 {
+    color: #FFFFFF;
+    text-transform: uppercase;
+    margin-bottom: 25px;
+}
+
+.links ul li a {
+    color: #FFFFFF;
+    font-size: 16px;
+    margin-bottom: 5px;
+    display: inline-block;
+}
+
+
+@media(max-width: 991px) {
+    .menu {
+        padding: 20px;
+        justify-content: space-between;
+    }
+
+    .menu-2 {
+        display: none;
+    }
+
+    .logo-1 {
+        width: 100px;
+    }
+
+    .logo-2 {
+        width: 0;
+    }
+
+    .menu label {
+        display: initial;
+    }
+
+    .menu .navbar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background-color: #181818;
+        display: none;
+    }
+
+    .menu .navbar ul li {
+        width: 100%;
+    }
+
+    #menu:checked ~ .navbar {
+        display: initial;
+    }
+
+    .header-content {
+        padding: 30px;
+        margin-top: 100px;
+    }
+
+    .slider {
+        flex-direction: column;
+    }
+
+    .slider-txt {
+        margin-left: 0;
+        width: 100%;
+        text-align: center;
+        margin-bottom: 50px;
+    }
+
+    .slider-txt h1 {
+        font-size: 50px;
+    }
+
+    .slider-txt p {
+        font-size: 16px;
+    }
+
+    .btn-1 {
+        padding: 10px 25px;
+        font-size: 14px;
+    }
+
+    .slider-img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .slider-img img {
+        margin-right: 0px;
+        width: 300px;
+    }
+
+    .swiper-horizontal > .swiper-pagination-bullets,
+    .swiper-pagination-bullets,.swiper-pagination-horizontal,
+    .swiper-pagination-custom,
+    .swiper-pagination-fraction {
+        bottom: -7px; 
+    }
+
+    .tabs {
+        padding: 50px 30px;
+    }
+
+    .tabs label {
+        width: 33%;
+    }
+
+    .info {
+        padding: 30px;
+        flex-direction: column;
+    }
+
+    .info-img {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-img img {
+        width: 400px;
+        height: 200px;
+        margin-bottom: 25px;
+    }
+
+    .info-txt {
+        width: 100%;
+        text-align: center;
+    }
+
+    .info-txt h2 {
+        font-size: 50px;
+    }
+
+    .info-txt p {
+        font-size: 16px;
+    }
+
+    .btn-1 {
+        font-size: 16px;
+    }
+
+    .horario {
+        padding: 30px;
+        text-align: center;
+    }
+
+    .horario-info h2 {
+        font-size: 50px;
+        margin-bottom: 15px;
+    }
+
+    .horario-txt {
+        flex-direction: column;
+    }
+
+    .socials {
+        justify-content: center;
+    }
+
+    .social img {
+        margin: 8px 0 0 0;
+    }
+
+    .footer {
+        padding: 30px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .links h4 {
+        margin: 25px 0px 10px 0px;
+    }
+    
+}
