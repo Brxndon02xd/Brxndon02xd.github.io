@@ -1,212 +1,223 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Maquetacion</title>
 </head>
-
 <body>
-
-    <header>
-
-        <div class="menu container">
-
-            <img class="logo-1" src="images/logo.svg" alt="">
-            <input type="checkbox" id="menu" />
-            <label for="menu">
-                <img src="images/menu.png" class="menu-icono" alt="">
-            </label>
+    <header class="header-formal">
+        <div class="container">
             <nav class="navbar">
-
-                <div class="menu-1">
-                    <ul>
-                        <li><a href="#">Inicio</a></li>
-                        <li><a href="#">Servicios</a></li>
-                        <li><a href="#">Productos</a></li>
-                    </ul>
+                <!-- Logo -->
+                <div class="logo-container">
+                    <img class="logo" src="/assets/img/poli.svg" alt="Logo de la Cooperativa">
                 </div>
-                <img class="logo-2" src="images/logo.svg" alt="">
 
-                <div class="menu-2">
-                    <ul>
-                        <li><a href="#">Horario</a></li>
-                    </ul>
-                    <div class="socials">
-                        <a href="#">
-                            <div class="social">
-                                <img src="images/s1.svg" alt="">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="social">
-                                <img src="images/s2.svg" alt="">
-                            </div>
-                        </a>
-                        <a href="#">
-                            <div class="social">
-                                <img src="images/s3.svg" alt="">
-                            </div>
-                        </a>
-                    </div>
+                <!-- Botón hamburguesa -->
+            <button class="hamburguesa" id="hamburguesa">
+                <span class="linea"></span>
+                <span class="linea"></span>
+                <span class="linea"></span>
+            </button>
+    
+            <!-- Menú de navegación -->
+            <ul class="menu" id="menu">
+                <li><a href="#" class="nav-link">Inicio</a></li>
+                <li><a href="#" class="nav-link">Quiénes Somos</a></li>
+                <li><a href="#" class="nav-link">Productos y Servicios</a></li>
+                <li><a href="#" class="nav-link">Objetivos</a></li>
+                <li><a href="#" class="nav-link">Proyección</a></li>
+            </ul>
+    
+                <!-- Redes sociales -->
+                <div class="socials">
+                    <a href="#" class="social-link">
+                        <img src="/assets/img/icons8-whatsapp.svg" alt="WhatsApp">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="/assets/img/icons8-facebook-nuevo.svg" alt="Facebook">
+                    </a>
+                    <a href="#" class="social-link">
+                        <img src="/assets/img/icons8-instagram.svg" alt="Instagram">
+                    </a>
                 </div>
             </nav>
         </div>
-
-        <div class="header-content container">
-
-            <div class="swiper mySwiper-1">
-                <div class="swiper-wrapper">
-
-                    <div class="swiper-slide">
-                        <div class="slider">
-                            <div class="slider-txt">
-                                <h1>¿QUIÉNES SOMOS?</h1>
-                                <p>
-                                    Es una sociedad civil de derecho privado, que se rige por las disposiciones de las Leyes de la,
-                                     Superintendencia de Economía Popular y Solidaria (SEPS), Código Orgánico Monetario Financiero (COMYF) y demás normativas aplicables,
-                                      así como por el Estatuto y los Reglamentos Internos.
-                                </p>
-                            </div>
-                            <div class="slider-img">
-                                <img src="/images/a12w.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slider">
-                            <div class="slider-txt">
-                                <h1>MISIÓN</h1>
-                                <p>
-                                    Ofrecemos soluciones financieras innovadoras y personalizadas para la comunidad policial del Ecuador, 
-                                    promoviendo su bienestar económico, estabilidad y crecimiento. 
-                                    Nos comprometemos a ser un aliado de confianza, brindando ventajas competitivas mediante un enfoque dedicado al bienestar financiero de las familias policiales.
-                                </p>
-                            </div>
-                            <div class="slider-img">
-                                <img src="images/abced.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="slider">
-                            <div class="slider-txt">
-                                <h1>VISIÓN</h1>
-                                <p>
-                                    Ser reconocidos como la institución financiera de elección para la comunidad policial en el Ecuador, 
-                                    líderes en confianza, crecimiento sostenible, comprometidos con la excelencia, calidad e innovación tecnológica, 
-                                    apoyo y bienestar económico para los servidores policiales técnicos operativos y sus familias. 
-                                </p>
-                            </div>
-                            <div class="slider-img">
-                                <img src="images/xzc.png" alt="">
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <div class="swiper-button-next"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-pagination"></div>
-            </div>
-
-        </div>
     </header>
-    <div class="valores-container">
-        <h3 class="valores-title">VALORES CORPORATIVOS</h3>
-        <div class="valores">
-          <div class="valor">
-            <img src="images/C.png" alt="Integridad" class="valor-icon">
-            <p class="valor-text">Integridad</p>
-          </div>
-          <div class="valor">
-            <img src="images/A.png" alt="Confianza" class="valor-icon">
-            <p class="valor-text">Confianza</p>
-          </div>
-          <div class="valor">
-            <img src="images/B.png" alt="Respeto" class="valor-icon">
-            <p class="valor-text">Respeto</p>
-          </div>
-          <div class="valor">
-            <img src="images/E.png" alt="Transparencia" class="valor-icon">
-            <p class="valor-text">Transparencia</p>
-          </div>
-          <div class="valor">
-            <img src="images/VALOR-1.png" alt="Compromiso" class="valor-icon">
-            <p class="valor-text">Compromiso</p>
-          </div>
-          <div class="valor">
-            <img src="images/D.png" alt="Equidad y Crecimiento" class="valor-icon">
-            <p class="valor-text">Equidad y Crecimiento</p>
-          </div>
+
+    <div class="header-content container">
+        <div class="swiper mySwiper-1">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="slider">
+                        <div class="slider-txt">
+                            <h1>¿QUIÉNES SOMOS?</h1>
+                            <p>
+                                Es una sociedad civil de derecho privado, que se rige por las disposiciones de las Leyes de la,
+                                 Superintendencia de Economía Popular y Solidaria (SEPS), Código Orgánico Monetario Financiero (COMYF) y demás normativas aplicables,
+                                  así como por el Estatuto y los Reglamentos Internos.
+                            </p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="/assets/img/a12w.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider">
+                        <div class="slider-txt">
+                            <h1>MISIÓN</h1>
+                            <p>
+                                Ofrecemos soluciones financieras innovadoras y personalizadas para la comunidad policial del Ecuador, 
+                                promoviendo su bienestar económico, estabilidad y crecimiento. 
+                                Nos comprometemos a ser un aliado de confianza, brindando ventajas competitivas mediante un enfoque dedicado al bienestar financiero de las familias policiales.
+                            </p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="/assets/img/abced.png" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="slider">
+                        <div class="slider-txt">
+                            <h1>VISIÓN</h1>
+                            <p>
+                                Ser reconocidos como la institución financiera de elección para la comunidad policial en el Ecuador, 
+                                líderes en confianza, crecimiento sostenible, comprometidos con la excelencia, calidad e innovación tecnológica, 
+                                apoyo y bienestar económico para los servidores policiales técnicos operativos y sus familias. 
+                            </p>
+                        </div>
+                        <div class="slider-img">
+                            <img src="/assets/img/xzc.png" alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-button-next"></div>
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-pagination"></div>
         </div>
+    </div>
+  
+     <!-- Sección Producto y Servicios -->
+<section class="productos-servicios">
+    <h4>Productos y Servicios</h4>
+    <div class="productos">
+        <div class="producto">
+            <img src="/assets/img/ahorro.png" alt="Ahorro">
+            <p>Ahorro</p>
+        </div>
+        <div class="producto">
+            <img src="/assets/img/credito.png" alt="Crédito">
+            <p>Crédito</p>
+        </div>
+        <div class="producto">
+            <img src="/assets/img/efinanciera.png" alt="Educación Financiera">
+            <p>Educación Financiera</p>
+        </div>
+    </div>
+</section>
+
+<section class="seccion-objetivos">
+    <div class="contenedor-objetivos">
+        <h2 class="titulo-objetivos">.OBJETIVOS</h2>
+        <ol class="lista-objetivos">
+            <li>Recibir de los Servidores policiales técnicos operativos activos y pasivos, depósitos de ahorro a la vista, ahorro especial en la modalidad de inversión programada a plazo mayor, en moneda de curso legal.</li>
+            <li>Conceder préstamos, en las condiciones, montos y plazos que se establezca en el manual de crédito.</li>
+            <li>Desarrollar actividades de Educación, capacitación y beneficio social, conforme lo establezcan los Reglamentos;</li>
+            <li>Realizar operaciones financieras en todo el territorio de la república del Ecuador mediante el nexo, convenio o vínculo empresarial con organizaciones, empresas, instituciones de la SEPS y otras que estén legalmente constituidas.</li>
+        </ol>
+    </div>
+</section>
+
+
+<section class="estrategias-futuro">
+    <h4 class="titulo-seccion">Estrategias y Planes de Futuro</h4>
+    <div class="planes">
+        <div class="plan">
+            <img src="/assets/img/legal.png" alt="Legalización" class="icono">
+            <h5 class="titulo-plan">Legalización</h5>
+            <ul class="lista-detalles">
+                <li>Registro Catastral SEPS</li>
+                <li>Sociedad Civil</li>
+                <li>RUC empresarial</li>
+                <li>Cuenta Corporativa</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <img src="/assets/img/aportacion+.png" alt="Aportación" class="icono">
+            <h5 class="titulo-plan">Aportación</h5>
+            <ul class="lista-detalles">
+                <li>Aporte de Creación</li>
+                <li>Aporte de Capitalización</li>
+                <li>Aporte de Ahorro Mensual</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <img src="/assets/img/siste.png" alt="Sistematización" class="icono">
+            <h5 class="titulo-plan">Sistematización</h5>
+            <ul class="lista-detalles">
+                <li>Creación de Sitio WEB</li>
+                <li>Implementación de Sistema Informático Financiero</li>
+            </ul>
+        </div>
+        <div class="plan">
+            <img src="/assets/img/operaci.png" alt="Operaciones" class="icono">
+            <h5 class="titulo-plan">Operaciones</h5>
+            <ul class="lista-detalles">
+                <li>Inicio de préstamos personales</li>
+                <li>Inicio de educación Financiera</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="footer-contenido">
+      <!-- Sección de información -->
+      <div class="footer-seccion">
+        <h4>Sobre Nosotros</h4>
+        <p>Somos una empresa dedicada a ofrecer soluciones innovadoras con un enfoque en la calidad y el profesionalismo.</p>
       </div>
-      
-    <footer class="footer container">
-
-        <img class="logo-2" src="images/logo.svg" alt="">
-        <div class="links">
-            <h4>lorem</h4>
-            <ul>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-            </ul>
-        </div>
-        <div class="links">
-            <h4>lorem</h4>
-            <ul>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-            </ul>
-        </div>
-        <div class="links">
-            <h4>lorem</h4>
-            <ul>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-                <li><a href="#">lorem</a></li>
-            </ul>
-        </div>
-        <div class="links">
-            <h4>lorem</h4>
-            <div class="socials">
-                <a href="#">
-                    <div class="social">
-                        <img src="images/s1.svg" alt="">
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="social">
-                        <img src="images/s2.svg" alt="">
-                    </div>
-                </a>
-                <a href="#">
-                    <div class="social">
-                        <img src="images/s3.svg" alt="">
-                    </div>
-                </a>
-            </div> 
-        </div>
-
-        <section>
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3989.774464368404!2d-78.5386668!3d-0.26864319999999997!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x91d598e9248ea1fd%3A0x70edbef75c8b1e7e!2sIRFEYAL!5e0!3m2!1ses!2sec!4v1733333712240!5m2!1ses!2sec" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-         </section>
-
-    </footer>
-
-
+  
+      <!-- Sección de enlaces -->
+      <div class="footer-seccion">
+        <h4>Enlaces Útiles</h4>
+        <ul class="enlaces">
+          <li><a href="#inicio">Inicio</a></li>
+          <li><a href="#servicios">Servicios</a></li>
+          <li><a href="#contacto">Contacto</a></li>
+          <li><a href="#politicas">Política de Privacidad</a></li>
+        </ul>
+      </div>
+   
+      <!-- Sección de mapa -->
+      <div class="footer-seccion">
+        <h4>Encuéntranos</h4>
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.835434509525!2d-122.41941568468155!3d37.77492927975813!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085809c2aaae35b%3A0x9eafed1d5b8d8d3b!2sSan%20Francisco%2C%20CA%2C%20EE.%20UU.!5e0!3m2!1ses-419!2sec!4v1698250805565!5m2!1ses-419!2sec"
+          width="100%"
+          height="200"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+    </div>
+  
+    <div class="footer-bottom">
+      <p>&copy; 2024 Caja De Ahorro y Crédito Bienestar Policial. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+  
     <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 
     <script src="script.js"></script>
 
 </body>
-
 </html>

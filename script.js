@@ -1,47 +1,28 @@
-var swiper = new Swiper(".mySwiper-1",{
-    slidesPerView:1,
+var swiper = new Swiper(".mySwiper-1", {
+    slidesPerView: 1,
     spaceBetween: 30,
-    loop:true,
+    loop: true,
+    autoplay: {
+        delay: 5000, // Tiempo entre cada diapositiva (en milisegundos)
+        disableOnInteraction: false, // No desactiva el autoplay cuando el usuario interactúa
+    },
     pagination: {
-        el:".swiper-pagination",
+        el: ".swiper-pagination",
         clickable: true,
     },
     navigation: {
-        nextEl:".swiper-button-next",
-        prevEl:".swiper-button-prev",
-    }
-});
-
-var swiper = new Swiper(".mySwiper-2",{
-    slidesPerView:3,
-    spaceBetween: 20,
-    loop:true,
-    loopFillGroupWithBlank:true,
-    navigation: {
-        nextEl:".swiper-button-next",
-        prevEl:".swiper-button-prev",
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
     },
-    breakpoints : {
-        0: {
-            slidesPerView:1,
-        },
-        520: {
-            slidesPerView:2,
-        },
-        950: {
-            slidesPerView:3,
-        }
-    }
+    speed: 800, // Transición más lenta (800 ms)
 });
 
-let tabInputs = document.querySelectorAll(".tabInput");
+const hamburguesa = document.getElementById("hamburguesa");
+const menu = document.getElementById("menu");
 
-tabInputs.forEach(function(input) {
-
-    input.addEventListener('change', function() {
-        let id = input.ariaValueMax;
-        let thisSwiper = document.getElementById('swiper' + id);
-        thisSwiper.swiper.update();
-    })
+hamburguesa.addEventListener("click", function() {
+  menu.classList.toggle("active"); // Muestra/oculta el menú
+  hamburguesa.classList.toggle("active"); // Cambia el ícono de la hamburguesa
 });
+
 
