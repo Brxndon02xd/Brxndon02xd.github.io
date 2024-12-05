@@ -568,11 +568,10 @@ body {
       top: 150px;
       right: 0;
       width: 100%;
-      background-color: #fff;
+      background-color: rgb(56, 52, 52);
       border: 1px solid #ddd;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       z-index: 2;
-      
     }
   
     .menu.active {
