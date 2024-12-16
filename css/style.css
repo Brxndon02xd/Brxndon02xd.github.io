@@ -273,7 +273,6 @@ body {
 
 /* Contenedor principal de la sección */
 .productos-servicios {
-    padding: 120px 20px;
     background: linear-gradient(135deg, #e3f2fd, #ffffff); /* Fondo dinámico y elegante */
     color: #333;
     text-align: center;
@@ -360,7 +359,6 @@ body {
     flex-wrap: wrap;
     gap: 40px;
     max-width: 1300px;
-    margin: 0 auto;
 }
 
 /* Estilo de cada producto */
