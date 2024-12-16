@@ -4,7 +4,7 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #092a79; /* Suave gris para contraste */
+    background-color: #08205a; /* Suave gris para contraste */
     font-size: 18px; /* Aumenta el tamaño de fuente general */
     box-sizing: border-box; /* Asegura que el padding no desborde los elementos */
 }
@@ -65,7 +65,7 @@ body {
 }
 
 .header-formal {
-    background-color: #0AA90B; /* Verde atractivo */
+    background-color: #086408; /* Verde atractivo */
     color: white;
     border-bottom: 4px solid #087A08; /* Verde oscuro para contraste */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
@@ -277,15 +277,15 @@ body {
     color: #333;
     text-align: center;
     margin-top: 50px;
+    padding-block: 10%;
     position: relative;
     overflow: hidden;
     box-shadow: 0 10px 60px rgba(0, 0, 0, 0.15); /* Sombra sutil */
     display: flex;
     flex-direction: column;
-    align-content: center;
-    flex-wrap: wrap;
+    align-items: center; /* Mejor alineación */
+    gap: 20px;
     z-index: 1;
-    align-content: space-around;
 }
 
 /* Fondo animado */
@@ -297,7 +297,6 @@ body {
     width: 200%;
     height: 200%;
     background: radial-gradient(circle, rgba(0, 123, 255, 0.1), transparent);
-    
     animation: pulseBackground 6s infinite alternate;
     z-index: -1;
 }
@@ -317,13 +316,12 @@ body {
 .productos-servicios h4 {
     font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: 60px;
+    margin-bottom: 40px;
     text-transform: uppercase;
     letter-spacing: 5px;
     color: #0056b3;
     text-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4);
     position: relative;
-    display: inline-block;
     animation: slideIn 1s ease-out;
 }
 
@@ -339,7 +337,6 @@ body {
     border-radius: 3px;
 }
 
-/* Animación del título */
 @keyframes slideIn {
     0% {
         opacity: 0;
@@ -355,10 +352,10 @@ body {
 .productos {
     display: flex;
     justify-content: center;
-    align-items: center;
     flex-wrap: wrap;
     gap: 40px;
     max-width: 1300px;
+    width: 100%;
 }
 
 /* Estilo de cada producto */
@@ -369,40 +366,37 @@ body {
     flex: 1 1 calc(33.33% - 40px);
     max-width: calc(33.33% - 40px);
     min-width: 280px;
-    transition: all 0.5s ease;
+    transition: transform 0.5s ease, box-shadow 0.5s ease, border-color 0.5s ease;
     box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     cursor: pointer;
     position: relative;
     overflow: hidden;
     border: 2px solid transparent;
     z-index: 1;
+    animation: fadeIn 0.8s ease-out;
 }
 
-/* Efecto de hover en el contenedor */
+/* Efecto hover en el contenedor */
 .producto:hover {
     transform: translateY(-20px) rotate(3deg);
     box-shadow: 0 25px 70px rgba(0, 123, 255, 0.2);
     border-color: #00d4ff;
-    animation: bounce 0.6s ease-in-out;
 }
 
-/* Animación de rebote al hacer hover */
-@keyframes bounce {
-    0% {
-        transform: translateY(0) rotate(0);
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
     }
-    50% {
-        transform: translateY(-10px) rotate(2deg);
-    }
-    100% {
-        transform: translateY(0) rotate(0);
+    to {
+        opacity: 1;
+        transform: translateY(0);
     }
 }
 
 /* Imagen de cada producto */
 .producto img {
     max-width: 120px;
-    height: auto;
     margin-bottom: 20px;
     transition: transform 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
     filter: grayscale(80%);
@@ -410,7 +404,6 @@ body {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
-/* Efecto de hover sobre la imagen */
 .producto:hover img {
     transform: scale(1.1) rotate(10deg);
     filter: grayscale(0%);
@@ -427,12 +420,11 @@ body {
     transition: color 0.3s ease;
 }
 
-/* Efecto de hover sobre el texto */
 .producto:hover p {
     color: #00d4ff;
 }
 
-/* Decoración flotante de cada producto */
+/* Decoración flotante */
 .producto::before {
     content: "";
     position: absolute;
@@ -446,25 +438,8 @@ body {
     z-index: 0;
 }
 
-/* Efecto de hover sobre el contenedor de producto */
 .producto:hover::before {
     transform: scale(1);
-}
-
-/* Animación inicial de cada producto */
-.producto {
-    animation: fadeIn 0.8s ease-out;
-}
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 /* Estilos generales de la sección de objetivos */
