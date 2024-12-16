@@ -932,5 +932,7 @@ body {
         padding: auto;
     }
 
-
+    .footer{
+        padding: 70px 0px;
+    }
 }
