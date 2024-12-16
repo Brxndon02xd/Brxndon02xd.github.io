@@ -4,9 +4,58 @@ body {
     font-family: "Poppins", sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #2c66fa; /* Suave gris para contraste */
+    background-color: #092a79; /* Suave gris para contraste */
     font-size: 18px; /* Aumenta el tamaño de fuente general */
     box-sizing: border-box; /* Asegura que el padding no desborde los elementos */
+}
+
+/* Estilo para las flechas del carrusel */
+.swiper-button-next,
+.swiper-button-prev {
+    color: #ffffff; /* Cambia el color por el que desees */
+    width: 40px; /* Ancho */
+    height: 40px; /* Alto */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Efecto hover para las flechas */
+.swiper-button-next:hover,
+.swiper-button-prev:hover {
+    transform: scale(1.2); /* Aumenta el tamaño al pasar el mouse */
+}
+
+/* Si necesitas posicionarlas mejor, puedes ajustar con margen */
+.swiper-button-next {
+    right: 10px; /* Ajusta la distancia del borde derecho */
+}
+
+.swiper-button-prev {
+    left: 10px; /* Ajusta la distancia del borde izquierdo */
+}
+
+/* Estilo para los círculos de paginación */
+.swiper-pagination-bullet {
+    background-color: #cccccc; /* Color base de los círculos */
+    width: 12px; /* Tamaño del círculo */
+    height: 12px;
+    margin: 0 6px; /* Espaciado entre los círculos */
+    opacity: 1; /* Asegúrate de que sean completamente visibles */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+/* Estilo para el círculo activo */
+.swiper-pagination-bullet-active {
+    background-color: #0056b3; /* Color del círculo activo */
+    transform: scale(1.2); /* Aumenta el tamaño del círculo activo */
+}
+
+/* Efecto hover para los círculos */
+.swiper-pagination-bullet:hover {
+    background-color: #007bff; /* Cambia el color al pasar el mouse */
+    transform: scale(1.1); /* Aumenta ligeramente el tamaño */
 }
 
 * {
@@ -149,7 +198,7 @@ body {
     transform: scale(1.2);
     filter: brightness(1);
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    border:  solid #6af96a;
+    border:  solid #ffffff;
 }
 
 /* Sección footer */
@@ -224,121 +273,325 @@ body {
 
 /* Contenedor principal de la sección */
 .productos-servicios {
-    padding: 80px 20px;
-    background-color: #fff; /* Fondo blanco para un diseño limpio */
-    color: #333; /* Texto en color oscuro */
+    padding: 120px 20px;
+    background: linear-gradient(135deg, #e3f2fd, #ffffff); /* Fondo dinámico y elegante */
+    color: #333;
     text-align: center;
-    width: 100%;
     margin-top: 50px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 10px 60px rgba(0, 0, 0, 0.15); /* Sombra sutil */
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    flex-wrap: wrap;
+    z-index: 1;
+    align-content: space-around;
+}
+
+/* Fondo animado */
+.productos-servicios::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.1), transparent);
+    
+    animation: pulseBackground 6s infinite alternate;
+    z-index: -1;
+}
+
+@keyframes pulseBackground {
+    0% {
+        transform: scale(1);
+        opacity: 0.3;
+    }
+    100% {
+        transform: scale(1.5);
+        opacity: 0.7;
+    }
 }
 
 /* Título de la sección */
 .productos-servicios h4 {
-    font-size: 2.5rem;
-    font-weight: bold;
-    margin-bottom: 40px;
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 60px;
     text-transform: uppercase;
-    letter-spacing: 1px;
-    color: #007BFF; /* Color de texto azul */
+    letter-spacing: 5px;
+    color: #0056b3;
+    text-shadow: 0px 4px 12px rgba(0, 123, 255, 0.4);
+    position: relative;
+    display: inline-block;
+    animation: slideIn 1s ease-out;
+}
+
+.productos-servicios h4::after {
+    content: "";
+    width: 120px;
+    height: 6px;
+    background: linear-gradient(90deg, #0056b3, #00d4ff);
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 3px;
+}
+
+/* Animación del título */
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* Contenedor de productos */
 .productos {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 40px;
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
 }
 
 /* Estilo de cada producto */
 .producto {
-    background-color: #f4f7f9;
-    border-radius: 12px;
+    background: #ffffff;
+    border-radius: 25px;
     padding: 40px 30px;
     text-align: center;
-    width: 30%;
-    min-width: 250px;
-    transition: all 0.3s ease;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33.33% - 40px);
+    max-width: calc(33.33% - 40px);
+    min-width: 280px;
+    transition: all 0.5s ease;
+    box-shadow: 0 15px 50px rgba(0, 0, 0, 0.1);
     cursor: pointer;
-    border: 2px solid transparent;
     position: relative;
+    overflow: hidden;
+    border: 2px solid transparent;
+    z-index: 1;
+}
+
+/* Efecto de hover en el contenedor */
+.producto:hover {
+    transform: translateY(-20px) rotate(3deg);
+    box-shadow: 0 25px 70px rgba(0, 123, 255, 0.2);
+    border-color: #00d4ff;
+    animation: bounce 0.6s ease-in-out;
+}
+
+/* Animación de rebote al hacer hover */
+@keyframes bounce {
+    0% {
+        transform: translateY(0) rotate(0);
+    }
+    50% {
+        transform: translateY(-10px) rotate(2deg);
+    }
+    100% {
+        transform: translateY(0) rotate(0);
+    }
 }
 
 /* Imagen de cada producto */
 .producto img {
-    max-width: 100px;
+    max-width: 120px;
     height: auto;
     margin-bottom: 20px;
-    transition: transform 0.3s ease;
-}
-
-/* Nombre de cada producto */
-.producto p {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-top: 15px;
-    text-transform: uppercase;
-}
-
-/* Efecto de hover sobre el producto */
-.producto:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
-    border-color: #007BFF;
+    transition: transform 0.6s ease, filter 0.6s ease, box-shadow 0.6s ease;
+    filter: grayscale(80%);
+    border-radius: 50%;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Efecto de hover sobre la imagen */
 .producto:hover img {
-    transform: scale(1.1);
+    transform: scale(1.1) rotate(10deg);
+    filter: grayscale(0%);
+    box-shadow: 0 20px 40px rgba(0, 123, 255, 0.2);
+}
+
+/* Nombre de cada producto */
+.producto p {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin-top: 20px;
+    text-transform: capitalize;
+    color: #333;
+    transition: color 0.3s ease;
 }
 
 /* Efecto de hover sobre el texto */
 .producto:hover p {
-    color: #007BFF;
+    color: #00d4ff;
+}
+
+/* Decoración flotante de cada producto */
+.producto::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(0, 123, 255, 0.2), transparent);
+    transform: scale(0);
+    transition: transform 0.5s ease;
+    z-index: 0;
+}
+
+/* Efecto de hover sobre el contenedor de producto */
+.producto:hover::before {
+    transform: scale(1);
+}
+
+/* Animación inicial de cada producto */
+.producto {
+    animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Estilos generales de la sección de objetivos */
 .seccion-objetivos {
-    background-color: #98FF98;
+    background-color: #ffff80; /* Fondo amarillo */
+    position: relative; /* Necesario para colocar la imagen */
     padding: 60px 20px;
     text-align: center;
+    overflow: hidden; /* Evita que la imagen sobresalga */
+}
+
+/* Imagen como marca de agua */
+.seccion-objetivos::before {
+    content: "";
+    background-image: url('/assets/img/POLI-NUEVI.png'); /* Imagen como marca de agua */
+    background-size: contain; /* Ajusta el tamaño para que no se deforme */
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.05; /* Sutil opacidad para una marca de agua casi invisible */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* La imagen queda detrás del contenido */
+    pointer-events: none; /* La marca de agua no interfiere con los elementos interactivos */
+    animation: fadeInOut 12s infinite ease-in-out, smoothMovement 20s infinite cubic-bezier(0.42, 0, 0.58, 1);
+    transition: opacity 2s ease-in-out, transform 5s ease-in-out;
+}
+
+/* Animación de desvanecimiento suave y elegante */
+@keyframes fadeInOut {
+    0%, 100% {
+        opacity: 0.05; /* Empieza muy tenue y desaparece al final */
+    }
+    25% {
+        opacity: 0.15; /* Aumenta la visibilidad de forma gradual */
+    }
+    50% {
+        opacity: 0.3; /* Se vuelve más visible en el medio de la animación */
+    }
+    75% {
+        opacity: 0.15; /* Desciende la visibilidad de nuevo */
+    }
+}
+
+/* Movimiento suave y elegante para la marca de agua */
+@keyframes smoothMovement {
+    0% {
+        transform: translate(0%, 0%) rotate(0deg); /* Empieza centrado */
+    }
+    5% {
+        transform: translate(2%, -2%) rotate(1deg); /* Primer movimiento sutil */
+    }
+    20% {
+        transform: translate(-2%, 2%) rotate(-2deg); /* Movimiento lateral suave */
+    }
+    50% {
+        transform: translate(0%, 0%) rotate(6deg); /* Vuelve a la posición inicial */
+    }
+    70% {
+        transform: translate(2%, -2%) rotate(-4deg); /* Movimiento ligero en diagonal */
+    }
+    90% {
+        transform: translate(-1%, 1%) rotate(3deg); /* Movimiento suave con leve rotación */
+    }
+    100% {
+        transform: translate(0%, 0%) rotate(0deg); /* Vuelve a la posición original */
+    }
+}
+
+/* Contenedor de contenido */
+.contenedor-objetivos {
+    position: relative; /* Eleva el contenido por encima de la imagen */
+    z-index: 1;
+    max-width: 1100px;
+    margin: 0 auto;
 }
 
 /* Estilo del título de la sección */
 .titulo-objetivos {
-    font-size: 32px;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 40px;
+    font-size: 42px;
+    font-weight: 800;
+    color: #004085; /* Azul oscuro */
+    margin-bottom: 30px;
     text-transform: uppercase;
     letter-spacing: 2px;
 }
 
-/* Contenedor de la lista de objetivos */
-.contenedor-objetivos {
-    max-width: 1200px;
-    margin: 0 auto;
-    text-align: left;
-}
-
-/* Estilos de la lista ordenada de objetivos */
+/* Estilos de la lista de objetivos */
 .lista-objetivos {
-    list-style-type: decimal;
+    list-style: none; /* Quitar el estilo de lista predeterminado */
     padding-left: 20px;
     font-size: 18px;
-    color: #555;
+    color: #333;
     line-height: 1.8;
+    margin: 0;
 }
 
-/* Estilo de los elementos de la lista */
 .lista-objetivos li {
+    position: relative;
     margin-bottom: 20px;
+    padding-left: 40px;
 }
 
+.lista-objetivos li:before {
+    content: "✔";
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #28a745; /* Color verde para los iconos */
+    font-size: 22px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+    .titulo-objetivos {
+        font-size: 28px;
+    }
+
+    .contenedor-objetivos {
+        padding: 20px;
+    }
+}
 
 .estrategias-futuro {
     padding: 50px 20px;
@@ -407,21 +660,29 @@ body {
     list-style: none;
     padding: 0;
     margin: 0;
-    font-size: 16px;
-    color: #555;
+    font-size: 1.125rem; /* Tamanho ligeramente mayor para mayor claridad y elegancia */
+    color: #2b2b2b; /* Tono de gris más oscuro para una mejor legibilidad */
     text-align: left;
-    line-height: 1.8;
+    line-height: 1.8; /* Espaciado de línea cómodo */
+    font-family: 'Lora', 'Segoe UI', sans-serif; /* Tipografía serifada para un estilo formal y profesional */
+    letter-spacing: 0.5px; /* Suave espaciado entre letras para mayor legibilidad */
+    font-weight: 400; /* Peso de fuente medio para equilibrio visual */
+    word-wrap: break-word; /* Evita el desbordamiento de texto en elementos largos */
 }
 
+/* Estilo de cada ítem de la lista */
 .lista-detalles li {
     position: relative;
-    padding-left: 20px;
-    margin-bottom: 10px;
-    transition: color 0.3s ease;
+    padding-left: 45px; /* Mayor espacio para destacar el punto con elegancia */
+    margin-bottom: 20px; /* Separación más espaciosa entre los elementos para claridad */
+    transition: color 0.3s ease, transform 0.3s ease, padding-left 0.3s ease; /* Transición más suave y refinada */
 }
 
-.plan:hover .lista-detalles li {
-    color: #333; /* Resalta los elementos de la lista al hacer hover */
+/* Efecto de hover para los elementos */
+.lista-detalles li:hover {
+    color: #3b5998; /* Un tono de azul elegante y profesional al pasar el ratón */
+    transform: translateX(8px); /* Un desplazamiento más sutil para el efecto de interacción */
+    padding-left: 50px; /* Aumento adicional del padding para dar más énfasis al hover */
 }
 
 /* Custom Bullet for List */
@@ -429,62 +690,81 @@ body {
     content: "•";
     position: absolute;
     left: 0;
-    color: #007BFF; /* Primary Accent Color */
-    font-size: 18px;
-    line-height: 1.2;
+    color: #0021b6; /* Azul refinado y serio */
+    font-size: 24px; /* Ícono más grande para mayor impacto visual */
+    line-height: 1.4;
+    top: 0;
+    transition: color 0.3s ease, transform 0.3s ease; /* Transición sutil en el color y el movimiento del punto */
+}
+
+/* Efecto de hover sobre el ícono */
+.lista-detalles li:hover::before {
+    color: #ff7f50; /* Cambio de color vibrante en el punto para atraer la atención */
+    transform: scale(1.1); /* Agranda el punto para dar un toque dinámico */
+}
+
+/* Asegurar que se vea bien en dispositivos móviles */
+@media (max-width: 768px) {
+    .lista-detalles {
+        font-size: 1rem; /* Ajuste del tamaño de fuente en pantallas más pequeñas */
+        line-height: 1.7; /* Ajuste del espaciado para mejorar la legibilidad */
+    }
+
+    .lista-detalles li {
+        padding-left: 35px; /* Ajuste del padding para pantallas más pequeñas */
+        margin-bottom: 15px; /* Menor separación en pantallas más pequeñas */
+    }
 }
 
 .footer {
-    background: linear-gradient(135deg, #101010, #1a1a1a); 
+    background: linear-gradient(135deg, #101010, #1a1a1a);
     color: #f4f4f4;
-    padding: 60px 20px;
+    padding: 80px 20px;
     font-family: 'Arial', sans-serif;
     border-top: 3px solid #98FF98;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    text-align: center;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
 }
 
 .footer-contenido {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 40px;
+    gap: 50px;
     max-width: 1200px;
     margin: 0 auto;
-    text-align: center; 
 }
 
 .footer-seccion h4 {
-    font-size: 22px;
+    font-size: 24px;
     color: #98FF98;
     margin-bottom: 20px;
     text-transform: uppercase;
-    letter-spacing: 1.5px;
+    letter-spacing: 1.8px;
+    font-weight: bold;
 }
 
 .footer-seccion p {
-    font-size: 15px;
+    font-size: 16px;
     line-height: 1.8;
     color: #d3d3d3;
 }
 
-.footer-seccion.mapa {
-    text-align: center; 
-}
-
 .footer-seccion.mapa iframe {
-    margin: 0 auto; 
+    margin: 0 auto;
     display: block;
     width: 100%;
-    max-width: 400px; 
-    height: 250px;
+    max-width: 420px;
+    height: 280px;
     border-radius: 12px;
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
     transition: transform 0.3s ease;
 }
 
 .footer-seccion.mapa iframe:hover {
-    transform: scale(1.02);
+    transform: scale(1.03);
 }
 
 .enlaces {
@@ -499,38 +779,41 @@ body {
 
 .enlaces li a {
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     color: #f4f4f4;
     position: relative;
     transition: color 0.3s ease, transform 0.3s ease;
+    font-weight: 500;
 }
 
 .enlaces li a::after {
     content: '';
     position: absolute;
-    bottom: -2px;
+    bottom: -4px;
     left: 0;
-    width: 0%;
+    width: 0;
     height: 2px;
     background-color: #98FF98;
     transition: width 0.3s ease;
 }
 
 .enlaces li a:hover {
-    color: #FFFFFF;
+    color: #ffffff;
     transform: translateX(5px);
 }
 
 .enlaces li a:hover::after {
-    width: 100%; 
+    width: 100%;
 }
 
 .footer-bottom {
     text-align: center;
     padding: 20px 0;
     background-color: #0d0d0d;
-    margin-top: 40px;
+    margin-top: 50px;
     font-size: 14px;
+    font-weight: 300;
+    letter-spacing: 0.5px;
 }
 
 .footer-bottom p {
@@ -547,6 +830,7 @@ body {
 .footer-bottom p a:hover {
     color: #007BFF;
 }
+
 
 @media(max-width: 1175px){
     .navbar{
